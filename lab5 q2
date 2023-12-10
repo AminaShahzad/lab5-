@@ -1,0 +1,19 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<strings.h>
+ int main(){
+   FILE *fptr;
+   fptr=fopen("newtextfile.txt","r+");
+
+   if(fptr!=NULL){
+   int ch,count=0;
+   fseek(fptr,0,SEEK_SET);
+   while((ch=getc(fptr))!=EOF){
+        count+=1;
+   }printf("%d",count);
+   fclose(fptr);}
+   else{
+    printf("not okay");
+   }
+   return 0;
+   }
