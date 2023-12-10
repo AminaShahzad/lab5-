@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<strings.h>
+ int main(){
+   FILE *fptr;
+   fptr=fopen("newtextfile.txt","w+");
+   fprintf(fptr,"%s","My name is amina shahzad and i am not a terrorist!!");
+   fclose(fptr);
+   fptr= fopen("newtextfile.txt","a+");
+   if(fptr!=NULL){
+
+   fprintf(fptr,"%s","\nand i am a computer student!");
+   int ch;
+   fseek(fptr,0,SEEK_SET);
+   while((ch=getc(fptr))!=EOF){
+        printf("%c",ch);
+   }
+   fclose(fptr);}
+   else{
+    printf("unable to open file:");
+   }
+   return 0;
+   }
